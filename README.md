@@ -1,4 +1,4 @@
-# ConvertAI - Unit Conversion AI Chatbot
+# LLM Finetuner - A Reusable Pipeline for Fine-Tuning LLMs
 
 In this project, I developed a specialized unit conversion chatbot by fine-tuning Hugging Face’s SmolLM2 model. Aside from the product itself, another outcome is a reusable pipeline for dataset resampling and model training, which leverages chain-of-thought prompting, supervised fine-tuning, and rejection sampling to enhance accuracy.
 
