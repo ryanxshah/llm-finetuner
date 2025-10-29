@@ -1,10 +1,5 @@
 # LLM Finetuner - A Reusable Pipeline for Fine-Tuning LLMs
 
-In this project, I developed a specialized unit conversion chatbot by fine-tuning Hugging Face’s SmolLM2 model. Aside from the product itself, another outcome is a reusable pipeline for dataset resampling and model training, which leverages chain-of-thought prompting, supervised fine-tuning, and rejection sampling to enhance accuracy.
+The motivation of this project was the desire to be able to easily and continually fine-tune an LLM for a specialized task. I designed and implemented a modular, reusable pipeline for fine-tuning such large language models. I wanted to be able to post-train LLMs without access to much expensive hardware. My solution was to adapt a small general-purpose model into a specialized tool, good at one particular task.
 
-## Chat with the model!
-
-You can chat with the model [here](https://github.com/ryanxshah/self-driving-car/tree/main/videos).
-
-Try asking a question such as "What is 3.2km in miles?".
-Note that the model will respond very poorly if asked any other types of questions. This is due to the fact that the base model is very small and struggles with generic language tasks. The tradeoff made in this project was to fine-tune this small model in such a way that it performs very well on the specialized task of unit conversion, even if it doesn't work well for general purposes.
+The pipeline consisted of multiple fine-tuning techniques including chain-of-thought prompting, supervised learning, and rejection sampling. Given a fine-tuning dataset, this strategy enables continual improvement of the base model by iteratively refining its reasoning and response quality. Chain-of-thought prompting teaches the model to reason through its answers step-by-step, while rejection sampling ensures that only high-quality responses based on human judgment are used for further training. Because the pipeline supports resampling, we can continually enhance the dataset and model performance by simply modifying the chain-of-thought prompt. This allows the model to develop more sophisticated reasoning over time without requiring new datasets or changes to the model architecture.
